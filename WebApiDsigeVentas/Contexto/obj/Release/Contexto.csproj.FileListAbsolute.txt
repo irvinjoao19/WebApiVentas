@@ -1,0 +1,6 @@
+D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\Contexto\bin\Release\Contexto.dll
+D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\Contexto\bin\Release\Contexto.pdb
+D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\Contexto\obj\Release\Contexto.csprojAssemblyReference.cache
+D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\Contexto\obj\Release\Contexto.csproj.CoreCompileInputs.cache
+D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\Contexto\obj\Release\Contexto.dll
+D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\Contexto\obj\Release\Contexto.pdb
