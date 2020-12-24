@@ -34,6 +34,9 @@ namespace Contexto
         public string numeroDocumento { get; set; }
         public string fechaFacturaPedido { get; set; }
         public int localId { get; set; }
+        public int identity { get; set; }		 
+		public string nombreCliente { get; set; }
+		public int tipoPersonal { get; set; }
         public List<PedidoDetalle> detalles { get; set; }
     }
 }

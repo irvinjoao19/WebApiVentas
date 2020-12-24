@@ -20,5 +20,14 @@ namespace Contexto
         public string fechaEntrega { get; set; }
         public string latitud { get; set; }
         public string longitud { get; set; }
+        public string numeroDocumento { get; set; }
+        public decimal subTotal { get; set; }
+        public int estado { get; set; }
+        public int motivoId { get; set; }
+        public string docVTA { get; set; }
+        public int localId { get; set; }
+        public int distritoId { get; set; }
+        public string nombreDistrito { get; set; }
+        public List<RepartoDetalle> detalle { get; set; }
     }
 }

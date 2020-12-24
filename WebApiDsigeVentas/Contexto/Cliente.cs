@@ -30,6 +30,15 @@ namespace Contexto
         public string longitud { get; set; }
         public int estado { get; set; }
         public int condFacturacion { get; set; }
-        public string fechaVisita { get; set; }         
+        public string fechaVisita { get; set; }
+
+               
+        public string nombreDepartamento { get; set; }
+        public string nombreProvincia { get; set; }
+        public string nombreDistrito { get; set; }
+        public string nombreGiroNegocio { get; set; }
+
+        public int tipoPersonal { get; set; }        
+        public int identity { get; set; }
     }
 }

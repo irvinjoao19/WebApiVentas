@@ -8,6 +8,7 @@ namespace Contexto
 {
     public class Departamento
     {
+        public int departamentoId { get; set; }
         public string codigo { get; set; }
         public string departamento { get; set; }
         

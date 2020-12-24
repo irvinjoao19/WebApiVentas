@@ -19,5 +19,27 @@ namespace Contexto
         public decimal porcentajeIGV { get; set; }
         public decimal totalPedido { get; set; }
         public string numeroPedido { get; set; }
+        public int identity { get; set; }
+        public int identityDetalle { get; set; }
+        public int localId { get; set; }
+
+        public string codigo { get; set; }
+        public string nombre { get; set; }
+        public string descripcion { get; set; }
+        public string abreviaturaProducto { get; set; }
+        public decimal unidadMedida { get; set; }
+        public decimal stockMinimo { get; set; }
+        public decimal subTotal { get; set; }
+
+        public decimal factor { get; set; }
+        public decimal precio1 { get; set; }
+        public decimal precio2 { get; set; }
+        public decimal precioMayMenor { get; set; }
+        public decimal precioMayMayor { get; set; }
+        public decimal rangoCajaHorizontal { get; set; }
+        public decimal rangoCajaMayorista { get; set; }
+
+        public int estado { get; set; }
+        public int active { get; set; }
     }
 }

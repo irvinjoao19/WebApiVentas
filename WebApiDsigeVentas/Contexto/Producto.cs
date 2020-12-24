@@ -17,5 +17,12 @@ namespace Contexto
         public decimal precio { get; set; }
         public string nombreCategoria { get; set; }
         public string nombreMarca { get; set; }
+        public decimal factor { get; set; }
+        public decimal precio2 { get; set; }
+        public decimal precioMayMenor { get; set; }
+        public decimal precioMayMayor { get; set; }
+        public decimal rangoCajaHorizontal { get; set; }
+        public decimal rangoCajaMayorista { get; set; }        
     }
 }
+    

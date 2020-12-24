@@ -11,6 +11,9 @@ namespace Entidades
         public int codigo { get; set; }
         public int codigoBase { get; set; }
         public int codigoRetorno { get; set; }
+        public int codigoBaseCliente { get; set; }
+        public int codigoRetornoCliente { get; set; }
+        public decimal stock { get; set; }
         public string mensaje { get; set; }
     }
 }

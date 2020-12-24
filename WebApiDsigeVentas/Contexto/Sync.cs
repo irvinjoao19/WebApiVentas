@@ -17,6 +17,10 @@ namespace Contexto
         public List<Cliente> clientes { get; set; }
         public List<FormaPago> formaPagos { get; set; }
         public List<Reparto> repartos { get; set; }
+        public List<Estado> estados { get; set; }
+        public List<Grupo> grupos { get; set; }
+        public List<Local> locales { get; set; }
+        public List<Pedido> pedidos { get; set; }
         public string mensaje { get; set; }
     }
 }
