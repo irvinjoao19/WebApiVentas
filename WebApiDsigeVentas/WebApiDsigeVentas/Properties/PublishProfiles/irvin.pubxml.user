@@ -85,10 +85,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/15/2019 17:46:58</publishTime>
     </File>
     <File Include="bin/Contexto.dll">
-      <publishTime>11/29/2019 15:00:28</publishTime>
+      <publishTime>12/23/2020 11:58:13</publishTime>
     </File>
     <File Include="bin/Contexto.pdb">
-      <publishTime>11/29/2019 15:00:28</publishTime>
+      <publishTime>12/23/2020 11:58:13</publishTime>
     </File>
     <File Include="bin/es/System.Net.Http.Formatting.resources.dll">
       <publishTime>02/01/2018 12:17:28</publishTime>
@@ -151,10 +151,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>07/25/2012 11:48:56</publishTime>
     </File>
     <File Include="bin/Negocio.dll">
-      <publishTime>11/29/2019 15:00:28</publishTime>
+      <publishTime>12/23/2020 11:58:14</publishTime>
     </File>
     <File Include="bin/Negocio.pdb">
-      <publishTime>11/29/2019 15:00:28</publishTime>
+      <publishTime>12/23/2020 11:58:14</publishTime>
     </File>
     <File Include="bin/Newtonsoft.Json.dll">
       <publishTime>02/18/2018 09:44:54</publishTime>
@@ -331,10 +331,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>02/01/2018 12:20:56</publishTime>
     </File>
     <File Include="bin/WebApiDsigeVentas.dll">
-      <publishTime>11/29/2019 15:00:29</publishTime>
+      <publishTime>12/23/2020 14:48:03</publishTime>
     </File>
     <File Include="bin/WebApiDsigeVentas.pdb">
-      <publishTime>11/29/2019 15:00:29</publishTime>
+      <publishTime>12/23/2020 14:48:03</publishTime>
     </File>
     <File Include="bin/WebGrease.dll">
       <publishTime>01/23/2014 13:57:34</publishTime>
@@ -430,7 +430,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>11/15/2019 17:46:27</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>11/18/2019 17:18:43</publishTime>
+      <publishTime>06/01/2020 22:14:17</publishTime>
     </File>
   </ItemGroup>
 </Project>

@@ -1,5 +1,3 @@
-D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\obj\Debug\WebApiDsigeVentas.csprojAssemblyReference.cache
-D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\obj\Debug\WebApiDsigeVentas.csproj.CoreCompileInputs.cache
 D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\bin\ApplicationInsights.config
 D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\bin\WebApiDsigeVentas.dll.config
 D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\bin\WebApiDsigeVentas.dll
@@ -106,6 +104,8 @@ D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\bin\es\System.
 D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\bin\es\System.Web.WebPages.resources.dll
 D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\bin\es\System.Web.WebPages.Deployment.resources.dll
 D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\bin\es\System.Web.WebPages.Razor.resources.dll
+D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\obj\Debug\WebApiDsigeVentas.csprojAssemblyReference.cache
+D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\obj\Debug\WebApiDsigeVentas.csproj.CoreCompileInputs.cache
 D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\obj\Debug\WebApiDsigeVentas.csproj.CopyComplete
 D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\obj\Debug\WebApiDsigeVentas.dll
 D:\VISUAL\ProyectoDsigeVentas\WebApiDsigeVentas\WebApiDsigeVentas\obj\Debug\WebApiDsigeVentas.pdb
