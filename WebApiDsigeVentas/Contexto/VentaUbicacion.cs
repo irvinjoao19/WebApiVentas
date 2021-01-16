@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Contexto
+﻿namespace Contexto
 {
     public class VentaUbicacion
     {
@@ -16,5 +10,6 @@ namespace Contexto
         public string latitud { get; set; }
         public string longitud { get; set; }
         public decimal total { get; set; }
+        public string vendedor { get; set; }
     }
 }

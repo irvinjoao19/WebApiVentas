@@ -392,5 +392,116 @@ namespace WebApiDsigeVentas.Controllers
             else
                 return BadRequest("No hay datos");
         }
+
+        [HttpGet]
+        [Route("ReporteCabecera")]
+        public IHttpActionResult ReporteCabecera()
+        {
+            VentaCabecera m = MigrationDao.ReporteCabecera();
+            if (m != null)
+            {
+                return Ok(m);
+            }
+            else
+                return BadRequest("No hay datos");
+        }
+
+        [HttpGet]
+        [Route("ReporteAdminBody")]
+        public IHttpActionResult ReporteAdminBody(int tipo)
+        {
+            List<VentaAdmin> m = MigrationDao.ReporteAdminBody(tipo);
+            if (m != null)
+            {
+                return Ok(m);
+            }
+            else
+                return BadRequest("No hay datos");
+        }
+
+
+
+        // reporte admin para supervisor 
+
+        [HttpGet]
+        [Route("ReporteAdminSupervisor1")]
+        public IHttpActionResult ReporteAdminSupervisor1(int id,int local)
+        {
+            List<VentaUbicacion> m = MigrationDao.ReporteAdminSupervisor1(id,local);
+            if (m != null)
+            {
+                return Ok(m);
+            }
+            else
+                return BadRequest("No hay datos");
+        }
+
+        [HttpGet]
+        [Route("ReporteAdminSupervisor2")]
+        public IHttpActionResult ReporteAdminSupervisor2(int id, int local)
+        {
+            List<VentaMes> m = MigrationDao.ReporteAdminSupervisor2(id,local);
+            if (m != null)
+            {
+                return Ok(m);
+            }
+            else
+                return BadRequest("No hay datos");
+        }
+
+        [HttpGet]
+        [Route("ReporteAdminSupervisor3")]
+        public IHttpActionResult ReporteAdminSupervisor3(int id, int local)
+        {
+            List<VentaAdminVendedor> m = MigrationDao.ReporteAdminSupervisor3(id,local);
+            if (m != null)
+            {
+                return Ok(m);
+            }
+            else
+                return BadRequest("No hay datos");
+        }
+
+
+        // reporte admin vendedor
+
+        [HttpGet]
+        [Route("ReporteAdminVendedor1")]
+        public IHttpActionResult ReporteAdminVendedor1(int id, int local)
+        {
+            List<VentaUbicacion> m = MigrationDao.ReporteAdminVendedor1(id, local);
+            if (m != null)
+            {
+                return Ok(m);
+            }
+            else
+                return BadRequest("No hay datos");
+        }
+
+        [HttpGet]
+        [Route("ReporteAdminVendedor2")]
+        public IHttpActionResult ReporteAdminVendedor2(int id, int local)
+        {
+            List<VentaMes> m = MigrationDao.ReporteAdminVendedor2(id, local);
+            if (m != null)
+            {
+                return Ok(m);
+            }
+            else
+                return BadRequest("No hay datos");
+        }
+
+        [HttpGet]
+        [Route("ReporteAdminVendedorUbicacion")]
+        public IHttpActionResult ReporteAdminVendedorUbicacion()
+        {
+            List<VentaUbicacionVendedor> m = MigrationDao.ReporteAdminVendedorUbicacion();
+            if (m != null)
+            {
+                return Ok(m);
+            }
+            else
+                return BadRequest("No hay datos");
+        }
     }
 }

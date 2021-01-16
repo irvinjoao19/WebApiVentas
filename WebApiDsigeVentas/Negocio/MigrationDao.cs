@@ -499,7 +499,6 @@ namespace Negocio
                 throw e;
             }
         }
-
         public static Sync GetSync(string version, int operarioId)
         {
             try
@@ -1640,8 +1639,8 @@ namespace Negocio
             {
                 throw e;
             }
-        }
-
+        }		
+	 
         public static Mensaje DeleteDetallePedido(PedidoDetalle d)
         {
             try
@@ -1851,7 +1850,8 @@ namespace Negocio
                                 direccion = dr.GetString(4),
                                 latitud = dr.GetString(5),
                                 longitud = dr.GetString(6),
-                                total = dr.GetDecimal(7)
+                                total = dr.GetDecimal(7),
+                                vendedor = ""
                             });
                         }
                     }
@@ -1888,6 +1888,340 @@ namespace Negocio
                             {
                                 fecha = dr.GetString(0),
                                 total = dr.GetDecimal(1)
+                            });
+                        }
+                    }
+                    cn.Close();
+                }
+                return p;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public static VentaCabecera ReporteCabecera()
+        {
+            try
+            {
+                VentaCabecera p = null;
+                using (SqlConnection cn = new SqlConnection(db))
+                {
+                    cn.Open();
+                    SqlCommand cmd = cn.CreateCommand();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;
+                    cmd.CommandText = "Movil_Reporte_Resumen_Venta_Cabecera";
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        while (dr.Read())
+                        {
+                            p = new VentaCabecera
+                            {
+                                totalVtaMes = dr.GetDecimal(0),
+                                totalDevolucion = dr.GetInt32(1),
+                                totalVtaReal = dr.GetDecimal(2),
+                                totalPedidoDia = dr.GetInt32(3),
+                                totalVtaDia = dr.GetDecimal(4)
+                            };
+                        }
+                    }
+                    cn.Close();
+                }
+                return p;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+
+        public static List<VentaAdmin> ReporteAdminBody(int t)
+        {
+            try
+            {
+                List<VentaAdmin> p = null;
+                using (SqlConnection cn = new SqlConnection(db))
+                {
+                    cn.Open();
+                    SqlCommand cmd = cn.CreateCommand();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;
+                    if (t == 1)
+                        cmd.CommandText = "Movil_Reporte_Resumen_Venta_Supervisor_Det";
+                    else
+                        cmd.CommandText = "Movil_Reporte_Resumen_Venta_Vendedor_Det";
+
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        p = new List<VentaAdmin>();
+                        while (dr.Read())
+                        {
+                            p.Add(new VentaAdmin
+                            {
+                                localId = dr.GetInt32(0),
+                                vendedorId = dr.GetInt32(1),
+                                vendedor = dr.GetString(2),
+                                vtaMes = dr.GetDecimal(3),
+                                devMes = dr.GetDecimal(4),
+                                vtaRealMes = dr.GetDecimal(5),
+                                vtaDia = dr.GetDecimal(6),
+                                pedidoDia = dr.GetInt32(7),
+                                tipo = t
+                            });
+                        }
+                    }
+                    cn.Close();
+                }
+                return p;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        // reporte admin supervisor
+
+        public static List<VentaUbicacion> ReporteAdminSupervisor1(int id, int local)
+        {
+            try
+            {
+                List<VentaUbicacion> p = null;
+                using (SqlConnection cn = new SqlConnection(db))
+                {
+                    cn.Open();
+                    SqlCommand cmd = cn.CreateCommand();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;
+                    cmd.CommandText = "Movil_Reporte_Resumen_Venta_Supervisor_VtaDiaria";
+                    cmd.Parameters.Add("@TipoReporte", SqlDbType.Int).Value = 1;
+                    cmd.Parameters.Add("@id_Supervisor", SqlDbType.Int).Value = id;
+                    cmd.Parameters.Add("@id_Local", SqlDbType.Int).Value = local;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        p = new List<VentaUbicacion>();
+                        while (dr.Read())
+                        {
+                            p.Add(new VentaUbicacion
+                            {
+                                pedidoCabId = dr.GetInt32(0),
+                                clienteId = dr.GetInt32(1),
+                                nroDocCliente = dr.GetString(2),
+                                nombreCliente = dr.GetString(3),
+                                direccion = dr.GetString(4),
+                                latitud = dr.GetString(5),
+                                longitud = dr.GetString(6),
+                                total = dr.GetDecimal(7),
+                                vendedor = dr.GetString(8)
+                            });
+                        }
+                    }
+                    cn.Close();
+                }
+                return p;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public static List<VentaMes> ReporteAdminSupervisor2(int id, int local)
+        {
+            try
+            {
+                List<VentaMes> p = null;
+                using (SqlConnection cn = new SqlConnection(db))
+                {
+                    cn.Open();
+                    SqlCommand cmd = cn.CreateCommand();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;
+                    cmd.CommandText = "Movil_Reporte_Resumen_Venta_Supervisor_VtaDiaria";
+                    cmd.Parameters.Add("@TipoReporte", SqlDbType.Int).Value = 2;
+                    cmd.Parameters.Add("@id_Supervisor", SqlDbType.Int).Value = id;
+                    cmd.Parameters.Add("@id_Local", SqlDbType.Int).Value = local;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        p = new List<VentaMes>();
+                        while (dr.Read())
+                        {
+                            p.Add(new VentaMes
+                            {
+                                fecha = dr.GetDateTime(0).ToString("dd/MM/yyyy"),
+                                total = dr.GetDecimal(1)
+                            });
+                        }
+                    }
+                    cn.Close();
+                }
+                return p;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public static List<VentaAdminVendedor> ReporteAdminSupervisor3(int id, int local)
+        {
+            try
+            {
+                List<VentaAdminVendedor> p = null;
+                using (SqlConnection cn = new SqlConnection(db))
+                {
+                    cn.Open();
+                    SqlCommand cmd = cn.CreateCommand();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;
+                    cmd.CommandText = "Movil_Reporte_Resumen_Venta_Supervisor_VtaDiaria";
+                    cmd.Parameters.Add("@TipoReporte", SqlDbType.Int).Value = 3;
+                    cmd.Parameters.Add("@id_Supervisor", SqlDbType.Int).Value = id;
+                    cmd.Parameters.Add("@id_Local", SqlDbType.Int).Value = local;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        p = new List<VentaAdminVendedor>();
+                        while (dr.Read())
+                        {
+                            p.Add(new VentaAdminVendedor
+                            {
+                                vendedorId = dr.GetInt32(0),
+                                vendedor = dr.GetString(1),
+                                totalMes = dr.GetDecimal(2),
+                                totalDia = dr.GetDecimal(3)
+                            });
+                        }
+                    }
+                    cn.Close();
+                }
+                return p;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        // reporte admin vendedor
+
+        public static List<VentaUbicacion> ReporteAdminVendedor1(int id, int local)
+        {
+            try
+            {
+                List<VentaUbicacion> p = null;
+                using (SqlConnection cn = new SqlConnection(db))
+                {
+                    cn.Open();
+                    SqlCommand cmd = cn.CreateCommand();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;
+                    cmd.CommandText = "Movil_Reporte_Resumen_Venta_Vendedor_VtaDiaria";
+                    cmd.Parameters.Add("@TipoReporte", SqlDbType.Int).Value = 1;
+                    cmd.Parameters.Add("@id_Supervisor", SqlDbType.Int).Value = id;
+                    cmd.Parameters.Add("@id_Local", SqlDbType.Int).Value = local;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        p = new List<VentaUbicacion>();
+                        while (dr.Read())
+                        {
+                            p.Add(new VentaUbicacion
+                            {
+                                pedidoCabId = dr.GetInt32(0),
+                                clienteId = dr.GetInt32(1),
+                                nroDocCliente = dr.GetString(2),
+                                nombreCliente = dr.GetString(3),
+                                direccion = dr.GetString(4),
+                                latitud = dr.GetString(5),
+                                longitud = dr.GetString(6),
+                                total = dr.GetDecimal(7),
+                                vendedor = dr.GetString(8)
+                            });
+                        }
+                    }
+                    cn.Close();
+                }
+                return p;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public static List<VentaMes> ReporteAdminVendedor2(int id, int local)
+        {
+            try
+            {
+                List<VentaMes> p = null;
+                using (SqlConnection cn = new SqlConnection(db))
+                {
+                    cn.Open();
+                    SqlCommand cmd = cn.CreateCommand();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;
+                    cmd.CommandText = "Movil_Reporte_Resumen_Venta_Vendedor_VtaDiaria";
+                    cmd.Parameters.Add("@TipoReporte", SqlDbType.Int).Value = 2;
+                    cmd.Parameters.Add("@id_Supervisor", SqlDbType.Int).Value = id;
+                    cmd.Parameters.Add("@id_Local", SqlDbType.Int).Value = local;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        p = new List<VentaMes>();
+                        while (dr.Read())
+                        {
+                            p.Add(new VentaMes
+                            {
+                                fecha = dr.GetDateTime(0).ToString("dd/MM/yyyy"),
+                                total = dr.GetDecimal(1)
+                            });
+                        }
+                    }
+                    cn.Close();
+                }
+                return p;
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+        }
+
+        public static List<VentaUbicacionVendedor> ReporteAdminVendedorUbicacion()
+        {
+            try
+            {
+                List<VentaUbicacionVendedor> p = null;
+                using (SqlConnection cn = new SqlConnection(db))
+                {
+                    cn.Open();
+                    SqlCommand cmd = cn.CreateCommand();
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 0;
+                    cmd.CommandText = "Movil_Reporte_Resumen_Venta_UbicacionVendedores";
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.HasRows)
+                    {
+                        p = new List<VentaUbicacionVendedor>();
+                        while (dr.Read())
+                        {
+                            p.Add(new VentaUbicacionVendedor
+                            {
+                                id = dr.GetInt32(0),
+                                latitud = dr.GetString(1),
+                                longitud = dr.GetString(2),
+                                operarioId = dr.GetInt32(3),
+                                vendedor = dr.GetString(4),
+                                total = dr.GetDecimal(5),
+                                totalPedidos = dr.GetInt32(6)
                             });
                         }
                     }
